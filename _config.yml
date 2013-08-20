@@ -1,0 +1,14 @@
+name: Laura Mackay Photography
+description: Photography by Laura Mackay
+url: http://www.LauraMackayPhotography.com
+
+who: Laura Mackay
+jobtitle: Student Photographer
+email: Laura@LauraMackayPhotography.com
+
+pygments: true
+markdown: rdiscount
+timezone: Europe/London
+permalink: /:year/:month/:day/:title/
+relative_permalinks: false
+paginate: 5

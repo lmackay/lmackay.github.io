@@ -1,0 +1,266 @@
+/* Font Definitions */
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+/*
+ * Variables 
+ */
+@mainHeaderColour: #AAAAAA;
+@mainFontColour: @mainHeaderColour;
+@outerBackgroundColour: #666666;
+@shadowColour: #333333;
+@backgroundColour: #000000;
+
+@headerHeight: 3em;
+
+@lightBackgroundColour: #333333;
+
+
+@linkColour: @mainFontColour;
+@linkHoverColour: #CCCCCC;
+
+
+@headerFonts: 'Great Vibes', Helvetica, sans-serif;
+@mainHeaderFontSize: 88px;
+@smallHeaderFontSize: 32px;
+@contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@contentFontSize: 18px;
+@contentFontWeight: 300;
+
+/**********/
+/* Mixins */
+/**********/
+.boxShadow(@hoff: 0px, @voff: 4px, @blur: 6px, @colour: rgba(0, 0, 0, .3)) {
+    -webkit-box-shadow: @hoff @voff @blur @colour;
+    -moz-box-shadow: @hoff @voff @blur @colour;
+	box-shadow: @hoff @voff @blur @colour;
+}
+
+.transition (@property: all, @duration: .15s, @timingFunction: linear, @delay: now) {
+    -webkit-transition: @property @duration @timingFunction @delay;
+    -moz-transition: @property @duration @timingFunction @delay;
+	transition: @property @duration @timingFunction @delay;
+}
+
+.transform (@function) {
+    -webkit-transform: @function;
+    -moz-transform: @function;
+    transform: @function;
+}
+
+.gallery {
+    
+    img { 
+        display: block; 
+    	width: inherit; 
+    }
+    
+    a {
+        background: white;
+    	display: inline;
+    	float: left;
+    	margin: 0 15px 30px;
+    	padding: 10px 10px 25px;
+    	text-align: center;
+    	text-decoration: none;
+    	.boxShadow(0 4px 6px rgba(0, 0, 0, .3));
+        .transition(all .15s linear);
+    	z-index:0;
+        position:relative;
+        
+        &:after {
+            color: #333;
+            font-size: 20px;
+            content: attr(title);
+            position: relative;
+            top:15px;
+        }
+        
+        &:hover{
+            .transform(rotate(0deg)); 
+            .transform(scale(1.2));             
+            z-index:10;
+            .boxShadow(0 10px 20px rgba(0, 0, 0, .7));
+        }
+        
+        &:nth-child(2n) {
+            .transform(rotate(4deg));   
+        }
+        &:nth-child(3n) { 
+            .transform(rotate(-24deg));   
+        }
+        &:nth-child(4n) {
+            .transform(rotate(14deg));   
+        }
+        &:nth-child(5n){
+            .transform(rotate(-18deg));   
+        }
+    }
+}
+
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  height: 100%;
+  background-color: @backgroundColour;
+  font-size: @contentFontSize;
+  font-family: @contentFonts;
+  font-weight: @contentFontWeight;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; 
+}
+
+h1 { margin-bottom: 1em; }
+p { margin: 1em 0; }
+
+a { 
+    color: @linkColour; 
+    &:hover {
+        color: @linkHoverColour;
+    }
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+ul.posts li {
+  line-height: 1.75em;
+}
+
+ul.posts span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  line-height: 1.5em;
+  
+  background: @backgroundColour;
+    .header {
+        border-bottom: 2px solid #eee;
+        h1.title {
+            font-family: @headerFonts;
+            font-size: @mainHeaderFontSize;
+            
+            color: @mainHeaderColour;
+            display: inline-block;
+            margin-bottom: 2em;
+        }
+        
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            
+            &.extra {
+              color: #aaa;
+              margin-left: 1em;
+              
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+    
+    .meta {
+        color: #aaa;
+    }
+
+    .footer {
+        
+        
+        font-size: @contentFontSize;
+        color: @mainFontColour;
+        //border-top: 4px solid #eee;
+        margin-top: 2em;
+        overflow: hidden;
+        
+        .contact {
+            list-style: none;
+        }
+    }
+    
+}
+
+.site .footer .rss {
+  margin-top: 1.1em;
+  margin-right: -.2em;
+  float: right;
+}
+
+.site .footer .rss img {
+  border: 0;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+/* standard */
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4em;
+}
+
+.post ul, .post ol {
+  margin-left: 1.35em;
+}
+
+.post code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2em;
+}
+
+.post pre code {
+  border: none;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
