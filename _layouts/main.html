@@ -12,10 +12,14 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
         
-        <!-- Lightbox -->
-<!--        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/lightbox-2.6.min.js"></script>
-        <link href="css/lightbox.css" rel="stylesheet" />-->
+        <!-- Cokonss Icons -->
+        <link rel="stylesheet" href="/css/cikonss.css" />
+        
+        {% if page.headIncludes %}
+            {% for inc in page.headIncludes %}
+                {{ inc }}
+            {% endfor %}
+        {% endif %}
         
         <!-- Make older versions of IE understand HTML5 tags -->
         <!--[if lt IE 9]>
@@ -26,22 +30,23 @@
     <body>
 
         <div class="container">
-          <div class="site">
-            <header class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            </header>
-
-                {{ content }}
-
-            <footer class="footer">
-              <ul class="contact">
-                <li>{{ site.who }}</li>
-                <li>{{ site.jobtitle }}</li>
-                <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-              </ul>
-            </footer>
-          </div>
-        </div> <!-- /container -->
+            <div class="site">
+                <header class="header">
+                  <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+                <!--              <a href="mailto:{{ site.email }}"><span class="icon icon-mid"><span class="icon-mail"></span></span></a>-->
+                </header>
+                
+                    {{ content }}
+                
+                <footer class="footer">
+                  <ul class="contact">
+                    <li>{{ site.who }}</li>
+                    <li>{{ site.jobtitle }}</li>
+                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                  </ul>
+                </footer>
+            </div>
+      </div>
 
     </body>
 </html>

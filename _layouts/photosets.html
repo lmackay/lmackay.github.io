@@ -1,0 +1,23 @@
+---
+layout: main
+---
+
+<section class="sets">
+
+{% for set in page.sets %}
+    <div class="set_holder">
+        <a href="{{ set.url }}">
+            <div class="hover_block block_8">
+                <div class="image-cropper">
+                    <img class="centered" src="{{ set.pictureUrl }}" width="500px">
+                </div>
+                <div class="circle_over"></div>
+                <div class="hover_info">
+                    <h1>{{ set.title }}</h1>
+                    <p>{{ set.description }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+</section>

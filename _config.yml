@@ -6,6 +6,8 @@ who: Laura Mackay
 jobtitle: Student Photographer
 email: Laura@LauraMackayPhotography.com
 
+photosetHome: /gallery/
+
 pygments: true
 markdown: rdiscount
 timezone: Europe/London

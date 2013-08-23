@@ -1,0 +1,22 @@
+---
+layout: main
+headIncludes: 
+- <!-- Lightbox -->
+- <script src="/js/jquery-1.10.2.min.js"></script>
+- <script src="/js/lightbox-2.6.min.js"></script>
+- <link href="/css/lightbox.css" rel="stylesheet" />
+---
+<ul class="breadcrumb">
+	<li><a href="{{ site.photosetHome }}">Photosets</a></li>
+	<li><a href="#">{{ page.title }}</a></li>
+</ul>
+
+<h2>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</h2>
+{% if page.date %}<p class="meta">{{ page.date | date_to_string }}</p>{% endif %}
+
+<div class="gallery">
+{{ content }}
+{% for image in page.images %}
+    <a href="{{ image.url }}" data-lightbox="{{ image.lightbox }}" title="{{ image.caption }}"><img height="200" src="{{ image.url }}" alt="{{ image.caption }}" title="{{ image.caption }}" /></a>
+{% endfor %}
+</div>
