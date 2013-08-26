@@ -8,66 +8,6 @@
 /**********/
 /* Mixins */
 /**********/
-.gallery img {
-  display: block;
-  width: inherit;
-}
-.gallery a {
-  background: white;
-  display: inline;
-  float: left;
-  margin: 0 15px 30px;
-  padding: 10px 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 0.15s linear 0;
-  -moz-transition: all 0.15s linear 0;
-  transition: all 0.15s linear 0;
-  z-index: 0;
-  position: relative;
-}
-.gallery a:after {
-  color: #333;
-  font-size: 20px;
-  content: attr(title);
-  position: relative;
-  top: 15px;
-}
-.gallery a:hover {
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  transform: scale(1.2);
-  z-index: 10;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
-}
-.gallery a:nth-child(2n) {
-  -webkit-transform: rotate(4deg);
-  -moz-transform: rotate(4deg);
-  transform: rotate(4deg);
-}
-.gallery a:nth-child(3n) {
-  -webkit-transform: rotate(-4deg);
-  -moz-transform: rotate(-4deg);
-  transform: rotate(-4deg);
-}
-.gallery a:nth-child(4n) {
-  -webkit-transform: rotate(8deg);
-  -moz-transform: rotate(8deg);
-  transform: rotate(8deg);
-}
-.gallery a:nth-child(5n) {
-  -webkit-transform: rotate(-12deg);
-  -moz-transform: rotate(-12deg);
-  transform: rotate(-12deg);
-}
 /*****************************************************************************/
 /*
 /* Common
@@ -84,8 +24,7 @@ body {
 }
 body {
   height: 100%;
-  background-color: #000000;
-  font-size: 18px;
+  background-color: #8a230f;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: center;
@@ -105,65 +44,59 @@ p {
   margin: 1em 0;
 }
 a {
-  color: #aaaaaa;
+  color: #000000;
 }
 a:hover {
-  color: #cccccc;
+  color: #8a230f;
+}
+body {
+  font-size: 18px;
 }
 /*****************************************************************************/
 /*
-/* Site
-/*
-/*****************************************************************************/
+    /* Site
+    /*
+    /*****************************************************************************/
 .container {
-  height: 100%;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
 }
+.container .header {
+  margin-top: 9px;
+  margin-bottom: 9px;
+  line-height: normal;
+}
+.container .header h1.title {
+  font-family: 'Great Vibes', Helvetica, sans-serif;
+  font-size: 81px;
+  margin-bottom: 0;
+  color: #000000;
+  display: inline-block;
+}
+.container .header a {
+  font-weight: bold;
+  text-decoration: none;
+}
+.container .header a:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
 .container .site {
   text-align: center;
   line-height: 1.5em;
-  margin: 10px;
+  margin-top: 9px;
+  margin-bottom: 9px;
   padding: 1em;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px 10px 2px 2px;
   background: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
   height: 100%;
-  background: #000000;
-}
-.container .site .header {
-  border-bottom: 2px solid #eee;
-  line-height: normal;
-}
-.container .site .header .icon-mail:hover {
-  background-color: #cccccc;
-}
-.container .site .header .icon-mail:hover:after {
-  border-color: #cccccc transparent transparent transparent;
-}
-.container .site .header h1.title {
-  font-family: 'Great Vibes', Helvetica, sans-serif;
-  font-size: 88px;
-  margin-bottom: 0;
-  color: #aaaaaa;
-  display: inline-block;
-}
-.container .site .header a {
-  font-weight: bold;
-  text-decoration: none;
-}
-.container .site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-.container .site .header a.extra:hover {
-  color: #000;
+  background: #8d8244;
 }
 .container .site .breadcrumb {
   list-style: none;
@@ -174,7 +107,7 @@ a:hover {
   float: left;
 }
 .container .site .breadcrumb li a {
-  color: white;
+  color: #000000;
   text-decoration: none;
   padding: 10px 0 10px 65px;
   background: rgba(207, 138, 5, 0.7);
@@ -191,7 +124,7 @@ a:hover {
   /* Go big on the size, and let overflow hide */
 
   border-bottom: 50px solid transparent;
-  border-left: 30px solid #a5630d;
+  border-left: 30px solid rgba(207, 138, 5, 0.7);
   position: absolute;
   top: 50%;
   margin-top: -50px;
@@ -205,7 +138,6 @@ a:hover {
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 30px solid white;
   position: absolute;
   top: 50%;
   margin-top: -50px;
@@ -257,36 +189,81 @@ a:hover {
 .container .site .breadcrumb li:last-child a:before {
   display: none;
 }
-.container .site .sets .set_holder {
+.container .site .meta {
+  color: #aaa;
+}
+.container .site .footer {
+  font-size: 18px;
+  color: #000000;
+  border-top: 4px solid #eee;
+  margin-top: 2em;
+  overflow: hidden;
+}
+.container .site .footer .contact {
+  list-style: none;
+}
+.sets {
+  /* Firefox */
+
+  -moz-column-count: 3;
+  /* Safari and Chrome */
+
+  -webkit-column-count: 3;
+  /* "Standard" */
+
+  column-count: 3;
+  /* Firefox */
+
+  -moz-column-gap: 9px;
+  /* Safari and Chrome */
+
+  -webkit-column-gap: 9px;
+  /* "Standard" */
+
+  column-gap: 9px;
+  -webkit-column-fill: auto;
+  -moz-column-fill: auto;
+  column-fill: auto;
+}
+.sets .photoHolder {
   padding: 7px;
   background: #f6f6f6;
-  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+  -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+  -o-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
   display: inline-block;
   overflow: hidden;
   width: 250px;
   margin: 15px;
 }
-.container .site .sets .set_holder .image-cropper {
+.sets .photoHolder .image-cropper {
   position: relative;
   width: 250px;
   height: 250px;
   overflow: hidden;
 }
-.container .site .sets .set_holder .image-cropper .centered {
+.sets .photoHolder .image-cropper img {
+  max-width: 500px;
+  width: auto;
+  height: auto;
+}
+.sets .photoHolder .image-cropper .centered {
   position: absolute;
   left: -50%;
-  top: -50%;
+  top: -25%;
 }
-.container .site .sets .set_holder .hover_block {
+.sets .photoHolder .hover_block {
   width: 250px;
   position: relative;
   overflow: hidden;
 }
-.container .site .sets .set_holder .hover_block .circle_over {
+.sets .photoHolder .hover_block .circleOver {
   border-radius: 50% 50% 50% 50%;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8) inset;
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+  -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+  -o-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
   height: 175%;
   width: 125%;
   position: absolute;
@@ -296,20 +273,23 @@ a:hover {
   -moz-transition: all 250ms linear 0;
   transition: all 250ms linear 0;
 }
-.container .site .sets .set_holder .hover_block:hover .circle_over {
-  box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.8) inset;
+.sets .photoHolder .hover_block:hover .circleOver {
+  -webkit-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+  -moz-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+  -o-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+  box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
 }
-.container .site .sets .set_holder .hover_block .hover_info {
-  width: 350px;
+.sets .photoHolder .hover_block .hoverInfo {
+  width: 500px;
   height: 250px;
   position: absolute;
   top: 0;
   left: 0;
 }
-.container .site .sets .set_holder .hover_block .hover_info h1 {
+.sets .photoHolder .hover_block .hoverInfo h1 {
   font-size: 18px;
   padding: 10px 20px;
-  background: rgba(207, 138, 5, 0.7);
+  background: rgba(138, 35, 15, 0.3);
   color: #E7E7E7;
   position: absolute;
   top: 25px;
@@ -318,10 +298,10 @@ a:hover {
   -moz-transition: left 200ms linear 0;
   transition: left 200ms linear 0;
 }
-.container .site .sets .set_holder .hover_block .hover_info p {
+.sets .photoHolder .hover_block .hoverInfo p {
   font-size: 18px;
   line-height: 1.4;
-  color: #fff;
+  color: #000000;
   position: absolute;
   top: 85px;
   left: 10%;
@@ -332,33 +312,565 @@ a:hover {
   -moz-transition: opacity 200ms linear 0;
   transition: opacity 200ms linear 0;
 }
-.container .site .sets .set_holder .hover_block .hover_info:hover h1 {
+.sets .photoHolder .hover_block .hoverInfo:hover h1 {
   left: 0;
   transition-delay: 250ms;
   -webkit-transition-delay: 250ms;
   -moz-transition-delay: 250ms;
 }
-.container .site .sets .set_holder .hover_block .hover_info:hover p {
+.sets .photoHolder .hover_block .hoverInfo:hover p {
   opacity: 1;
   transition-delay: 600ms;
   -webkit-transition-delay: 600ms;
   -moz-transition-delay: 600ms;
 }
-.container .site .sets .set_holder .hover_block .hover_info:hover a {
+.sets .photoHolder .hover_block .hoverInfo:hover a {
   right: 0;
-  transition: right 200ms linear 700ms, color, background 200ms linear;
   -webkit-transition: right 200ms linear 700ms, color, background 200ms linear;
   -moz-transition: right 200ms linear 700ms, color, background 200ms linear;
+  transition: right 200ms linear 700ms, color, background 200ms linear;
 }
-.container .site .meta {
-  color: #aaa;
+@media (max-device-width: 1024px) {
+  /*IPad portrait AND netbooks, AND anything with smaller screen*/
+  body {
+    font-size: 12px;
+  }
+  /*****************************************************************************/
+  /*
+      /* Site
+      /*
+      /*****************************************************************************/
+  .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+  }
+  .container .header {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    line-height: normal;
+  }
+  .container .header h1.title {
+    font-family: 'Great Vibes', Helvetica, sans-serif;
+    font-size: 54px;
+    margin-bottom: 0;
+    color: #000000;
+    display: inline-block;
+  }
+  .container .header a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .container .header a:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .container .site {
+    text-align: center;
+    line-height: 1.5em;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px 10px 2px 2px;
+    background: rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(255, 255, 255, 0.3) inset, 0 10px rgba(255, 255, 255, 0.2) inset, 0 10px 20px rgba(255, 255, 255, 0.25) inset, 0 -15px 30px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    background: #8d8244;
+  }
+  .container .site .breadcrumb {
+    list-style: none;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  .container .site .breadcrumb li {
+    float: left;
+  }
+  .container .site .breadcrumb li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 0 10px 65px;
+    background: rgba(207, 138, 5, 0.7);
+    position: relative;
+    display: block;
+    float: left;
+  }
+  .container .site .breadcrumb li a:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    /* Go big on the size, and let overflow hide */
+  
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid rgba(207, 138, 5, 0.7);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+  }
+  .container .site .breadcrumb li a:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+  }
+  .container .site .breadcrumb li a:hover {
+    background: #cf8a05;
+  }
+  .container .site .breadcrumb li a:hover:after {
+    border-left-color: #cf8a05 !important;
+  }
+  .container .site .breadcrumb li:first-child a {
+    padding-left: 10px;
+  }
+  .container .site .breadcrumb li:nth-child(2) a {
+    background: #f9a90e;
+  }
+  .container .site .breadcrumb li:nth-child(2) a:after {
+    border-left-color: #f9a90e;
+  }
+  .container .site .breadcrumb li:nth-child(3) a {
+    background: #fabb40;
+  }
+  .container .site .breadcrumb li:nth-child(3) a:after {
+    border-left-color: #fabb40;
+  }
+  .container .site .breadcrumb li:nth-child(4) a {
+    background: #fccc71;
+  }
+  .container .site .breadcrumb li:nth-child(4) a:after {
+    border-left-color: #fccc71;
+  }
+  .container .site .breadcrumb li:nth-child(5) a {
+    background: #fddea3;
+  }
+  .container .site .breadcrumb li:nth-child(5) a:after {
+    border-left-color: #fddea3;
+  }
+  .container .site .breadcrumb li:last-child a {
+    background: transparent !important;
+    pointer-events: none;
+    cursor: default;
+  }
+  .container .site .breadcrumb li:last-child a:after {
+    display: none;
+  }
+  .container .site .breadcrumb li:last-child a:before {
+    display: none;
+  }
+  .container .site .meta {
+    color: #aaa;
+  }
+  .container .site .footer {
+    font-size: 12px;
+    color: #000000;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+  .container .site .footer .contact {
+    list-style: none;
+  }
+  .sets {
+    /* Firefox */
+  
+    -moz-column-count: 3;
+    /* Safari and Chrome */
+  
+    -webkit-column-count: 3;
+    /* "Standard" */
+  
+    column-count: 3;
+    /* Firefox */
+  
+    -moz-column-gap: 6px;
+    /* Safari and Chrome */
+  
+    -webkit-column-gap: 6px;
+    /* "Standard" */
+  
+    column-gap: 6px;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+  }
+  .sets .photoHolder {
+    padding: 7px;
+    background: #f6f6f6;
+    -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    -o-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    display: inline-block;
+    overflow: hidden;
+    width: 150px;
+    margin: 15px;
+  }
+  .sets .photoHolder .image-cropper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+  }
+  .sets .photoHolder .image-cropper img {
+    max-width: 300px;
+    width: auto;
+    height: auto;
+  }
+  .sets .photoHolder .image-cropper .centered {
+    position: absolute;
+    left: -50%;
+    top: -25%;
+  }
+  .sets .photoHolder .hover_block {
+    width: 150px;
+    position: relative;
+    overflow: hidden;
+  }
+  .sets .photoHolder .hover_block .circleOver {
+    border-radius: 50% 50% 50% 50%;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    -o-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    height: 175%;
+    width: 125%;
+    position: absolute;
+    top: -37.5%;
+    left: -12.5%;
+    -webkit-transition: all 250ms linear 0;
+    -moz-transition: all 250ms linear 0;
+    transition: all 250ms linear 0;
+  }
+  .sets .photoHolder .hover_block:hover .circleOver {
+    -webkit-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    -o-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+  }
+  .sets .photoHolder .hover_block .hoverInfo {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo h1 {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: rgba(138, 35, 15, 0.3);
+    color: #E7E7E7;
+    position: absolute;
+    top: 25px;
+    left: -100%;
+    -webkit-transition: left 200ms linear 0;
+    -moz-transition: left 200ms linear 0;
+    transition: left 200ms linear 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #000000;
+    position: absolute;
+    top: 85px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 200ms linear 0;
+    -moz-transition: opacity 200ms linear 0;
+    transition: opacity 200ms linear 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover h1 {
+    left: 0;
+    transition-delay: 250ms;
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover p {
+    opacity: 1;
+    transition-delay: 600ms;
+    -webkit-transition-delay: 600ms;
+    -moz-transition-delay: 600ms;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover a {
+    right: 0;
+    -webkit-transition: right 200ms linear 700ms, color, background 200ms linear;
+    -moz-transition: right 200ms linear 700ms, color, background 200ms linear;
+    transition: right 200ms linear 700ms, color, background 200ms linear;
+  }
 }
-.container .site .footer {
-  font-size: 18px;
-  color: #aaaaaa;
-  margin-top: 2em;
-  overflow: hidden;
+@media (min-width: 960px) {
+  .sets {
+    /* Firefox */
+  
+    -moz-column-count: 4;
+    /* Safari and Chrome */
+  
+    -webkit-column-count: 4;
+    /* "Standard" */
+  
+    column-count: 4;
+    /* Firefox */
+  
+    -moz-column-gap: 9px;
+    /* Safari and Chrome */
+  
+    -webkit-column-gap: 9px;
+    /* "Standard" */
+  
+    column-gap: 9px;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+  }
+  .sets .photoHolder {
+    padding: 7px;
+    background: #f6f6f6;
+    -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    -o-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    margin: 15px;
+  }
+  .sets .photoHolder .image-cropper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  .sets .photoHolder .image-cropper img {
+    max-width: 400px;
+    width: auto;
+    height: auto;
+  }
+  .sets .photoHolder .image-cropper .centered {
+    position: absolute;
+    left: -50%;
+    top: -25%;
+  }
+  .sets .photoHolder .hover_block {
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  .sets .photoHolder .hover_block .circleOver {
+    border-radius: 50% 50% 50% 50%;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    -o-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    height: 175%;
+    width: 125%;
+    position: absolute;
+    top: -37.5%;
+    left: -12.5%;
+    -webkit-transition: all 250ms linear 0;
+    -moz-transition: all 250ms linear 0;
+    transition: all 250ms linear 0;
+  }
+  .sets .photoHolder .hover_block:hover .circleOver {
+    -webkit-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    -o-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+  }
+  .sets .photoHolder .hover_block .hoverInfo {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo h1 {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: rgba(138, 35, 15, 0.3);
+    color: #E7E7E7;
+    position: absolute;
+    top: 25px;
+    left: -100%;
+    -webkit-transition: left 200ms linear 0;
+    -moz-transition: left 200ms linear 0;
+    transition: left 200ms linear 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #000000;
+    position: absolute;
+    top: 85px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 200ms linear 0;
+    -moz-transition: opacity 200ms linear 0;
+    transition: opacity 200ms linear 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover h1 {
+    left: 0;
+    transition-delay: 250ms;
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover p {
+    opacity: 1;
+    transition-delay: 600ms;
+    -webkit-transition-delay: 600ms;
+    -moz-transition-delay: 600ms;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover a {
+    right: 0;
+    -webkit-transition: right 200ms linear 700ms, color, background 200ms linear;
+    -moz-transition: right 200ms linear 700ms, color, background 200ms linear;
+    transition: right 200ms linear 700ms, color, background 200ms linear;
+  }
 }
-.container .site .footer .contact {
-  list-style: none;
+@media (min-width: 1100px) {
+  .sets {
+    /* Firefox */
+  
+    -moz-column-count: 5;
+    /* Safari and Chrome */
+  
+    -webkit-column-count: 5;
+    /* "Standard" */
+  
+    column-count: 5;
+    /* Firefox */
+  
+    -moz-column-gap: 9px;
+    /* Safari and Chrome */
+  
+    -webkit-column-gap: 9px;
+    /* "Standard" */
+  
+    column-gap: 9px;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+  }
+  .sets .photoHolder {
+    padding: 7px;
+    background: #f6f6f6;
+    -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    -o-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.3) ;
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    margin: 15px;
+  }
+  .sets .photoHolder .image-cropper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  .sets .photoHolder .image-cropper img {
+    max-width: 400px;
+    width: auto;
+    height: auto;
+  }
+  .sets .photoHolder .image-cropper .centered {
+    position: absolute;
+    left: -50%;
+    top: -25%;
+  }
+  .sets .photoHolder .hover_block {
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  .sets .photoHolder .hover_block .circleOver {
+    border-radius: 50% 50% 50% 50%;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    -o-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7) inset;
+    height: 175%;
+    width: 125%;
+    position: absolute;
+    top: -37.5%;
+    left: -12.5%;
+    -webkit-transition: all 250ms linear 0;
+    -moz-transition: all 250ms linear 0;
+    transition: all 250ms linear 0;
+  }
+  .sets .photoHolder .hover_block:hover .circleOver {
+    -webkit-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    -o-box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 0 220px rgba(0, 0, 0, 0.7) inset;
+  }
+  .sets .photoHolder .hover_block .hoverInfo {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo h1 {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: rgba(138, 35, 15, 0.3);
+    color: #E7E7E7;
+    position: absolute;
+    top: 25px;
+    left: -100%;
+    -webkit-transition: left 200ms linear 0;
+    -moz-transition: left 200ms linear 0;
+    transition: left 200ms linear 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #000000;
+    position: absolute;
+    top: 85px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 200ms linear 0;
+    -moz-transition: opacity 200ms linear 0;
+    transition: opacity 200ms linear 0;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover h1 {
+    left: 0;
+    transition-delay: 250ms;
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover p {
+    opacity: 1;
+    transition-delay: 600ms;
+    -webkit-transition-delay: 600ms;
+    -moz-transition-delay: 600ms;
+  }
+  .sets .photoHolder .hover_block .hoverInfo:hover a {
+    right: 0;
+    -webkit-transition: right 200ms linear 700ms, color, background 200ms linear;
+    -moz-transition: right 200ms linear 700ms, color, background 200ms linear;
+    transition: right 200ms linear 700ms, color, background 200ms linear;
+  }
 }

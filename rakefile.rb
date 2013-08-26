@@ -1,7 +1,7 @@
 require 'yaml'
 require 'rubygems'
 require 'jekyll'
-require 'zemanta' # gem install zemanta
+require 'rmagick'
  
 def get_zemanta_terms(content)
   $stderr.puts "Querying Zemanta..."
@@ -175,6 +175,26 @@ end
 
 task :upload do
     upload
+end
+
+desc 'Generate Thumbnails'
+task :generateThumbs do
+    puts 'Generating Thumbnails'
+    generateThumbs
+    puts 'Done'
+end
+
+def generateThumbs
+
+    photoDir = Dir.open "photos" 
+    
+    FileUtils.rm_rf("photos/thumbs")
+    FileUtils.mkdir_p("photos/thumbs")
+
+    photoDir.each do |file|
+        i = Magick::Image.read(file).first
+        i.resize_to_fill(250,250, Magick::CenterGravity).write("photos/thumbs/#{file}-tb.jpg")
+    end
 end
 
 def upload

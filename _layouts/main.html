@@ -6,14 +6,8 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
         <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
-        
-        <!-- Cokonss Icons -->
-        <link rel="stylesheet" href="/css/cikonss.css" />
         
         {% if page.headIncludes %}
             {% for inc in page.headIncludes %}
@@ -30,11 +24,13 @@
     <body>
 
         <div class="container">
+            
+            <header class="header">
+              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            </header>
+        
             <div class="site">
-                <header class="header">
-                  <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-                <!--              <a href="mailto:{{ site.email }}"><span class="icon icon-mid"><span class="icon-mail"></span></span></a>-->
-                </header>
+                
                 
                     {{ content }}
                 

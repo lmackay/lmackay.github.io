@@ -5,14 +5,14 @@ layout: main
 <section class="sets">
 
 {% for set in page.sets %}
-    <div class="set_holder">
+    <div class="photoHolder">
         <a href="{{ set.url }}">
-            <div class="hover_block block_8">
+            <div class="hover_block">
                 <div class="image-cropper">
-                    <img class="centered" src="{{ set.pictureUrl }}" width="500px">
+                    <img class="centered" src="{{ set.pictureUrl }}">
                 </div>
-                <div class="circle_over"></div>
-                <div class="hover_info">
+                <div class="circleOver"></div>
+                <div class="hoverInfo">
                     <h1>{{ set.title }}</h1>
                     <p>{{ set.description }}</p>
                 </div>
