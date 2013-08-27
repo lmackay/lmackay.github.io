@@ -11,7 +11,6 @@ headIncludes:
 	<li><a href="#">{{ page.title }}</a></li>
 </ul>
 
-<h2>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</h2>
 {% if page.date %}<p class="meta">{{ page.date | date_to_string }}</p>{% endif %}
 
 <div class="sets">
@@ -19,7 +18,7 @@ headIncludes:
 {% for image in page.images %}
     <div class="photoHolder title" title="{{ image.caption }}">
         <div class="image-cropper">
-            <a href="{{ image.url }}" data-lightbox="{{ page.lightbox }}" title="{{ image.caption }}"><img src="{{ image.url }}" class="centered" alt="{{ image.caption }}" title="{{ image.caption }}" /></a>
+            <a href="{{ site.largePath }}/{{ image.url }}" data-lightbox="{{ page.lightbox }}" title="{{ image.caption }}"><img src="{{ site.thumbPath }}/{{ image.url }}" class="centered" alt="{{ image.caption }}" title="{{ image.caption }}" /></a>
         </div>
     </div>
 {% endfor %}

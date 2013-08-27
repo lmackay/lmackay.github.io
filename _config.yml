@@ -6,7 +6,9 @@ who: Laura Mackay
 jobtitle: Student Photographer
 email: Laura@LauraMackayPhotography.com
 
-photosetHome: /gallery/
+photosetHome: /
+thumbPath: /photos/thumbs
+largePath: /photos/large
 
 pygments: true
 markdown: rdiscount

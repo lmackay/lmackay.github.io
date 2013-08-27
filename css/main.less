@@ -17,9 +17,9 @@
 
 
 @linkColour: @mainFontColour;
-@linkBackgroundColour: rgba(207, 138, 5, 0.7);
+@linkBackgroundColour: fade(@outerBackgroundColour, 80%);
 @linkHoverColour: @outerBackgroundColour;
-@linkHoverBackgroundColour: rgba(207, 138, 5, 1.0);
+@linkHoverBackgroundColour: @outerBackgroundColour;
 
 
 @headerFonts: 'Great Vibes', Helvetica, sans-serif;
@@ -300,8 +300,7 @@ a {
                 
                 font-size: @contentFontSize;
                 color: @mainFontColour;
-                border-top: 4px solid #eee;
-                margin-top: 2em;
+                border-top: 1px solid @outerBackgroundColour;
                 overflow: hidden;
                 
                 .contact {
@@ -356,7 +355,7 @@ a {
                 
                 .centered {
                     position: absolute;
-                    left: -50%;
+                    left: -25%;
                     top: -25%;
                 }
                 
@@ -443,9 +442,9 @@ a {
 }
 
 @media (min-width: 960px) {
-    .photosets(18px; 200px; 4);
+    .photosets(18px; 250px; 3);
 }
 
 @media (min-width: 1100px) {
-    .photosets(18px; 200px; 5);
+    .photosets(18px; 250px; 3);
 }

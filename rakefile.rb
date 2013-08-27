@@ -1,7 +1,7 @@
 require 'yaml'
 require 'rubygems'
 require 'jekyll'
-require 'rmagick'
+# require 'rmagick'
  
 def get_zemanta_terms(content)
   $stderr.puts "Querying Zemanta..."
