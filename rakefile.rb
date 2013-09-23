@@ -1,7 +1,9 @@
 require 'yaml'
 require 'rubygems'
 require 'jekyll'
-# require 'rmagick'
+require 'rmagick'
+require 'find'
+require 'yaml'
  
 def get_zemanta_terms(content)
   $stderr.puts "Querying Zemanta..."
@@ -159,7 +161,16 @@ HTML
 end
 
 desc 'Build and send to dev server'
-task :build do
+task :build, :opt do |t, args|
+    
+    opt = args[:opt]
+    if opt then
+    puts opt
+        if ("full".casecmp opt) == 0 then
+            generateGalleries
+        end
+    end
+
     jekyll
     upload
     puts 'Done.'
@@ -168,13 +179,115 @@ end
 def jekyll
   puts 'Building...'
   sh 'lessc css/main.less css/main.css'
-  sh 'jekyll build --drafts'
-  sh 'touch _site/.htaccess'
+  sh 'jekyll build --drafts -d ../lmk_built_site'
+  sh 'touch ../dwi_built_site/.htaccess'  
   puts 'Build Complete'
 end
 
 task :upload do
     upload
+end
+
+desc 'Generate Galleries'
+task :generateGalleries do
+    puts 'Generating Galleries'
+    generateGalleries
+    puts 'Done'
+end
+
+desc 'Rebuild galleries and image versions from the gallery.yaml files in the photos/full directory'
+def generateGalleries
+
+    gallery_dir = "gallery"
+    full_img_dir = 'photos/full'
+    #Clean out directories
+    FileUtils.rm Dir.glob("#{gallery_dir}/*")
+    FileUtils.rm_rf Dir.glob("photos/thumbs/*")
+    FileUtils.rm_rf Dir.glob("photos/large/*")
+    
+    # Find all the "gallery.yaml" files that are in the full_img_dir.
+    gallery_file_paths = []
+    Find.find(full_img_dir) do |path|
+      gallery_file_paths << path if path =~ /gallery.yaml$/
+    end
+    
+    # Print this list
+    puts gallery_file_paths
+    
+    all_galleries = []
+    # Generate the individual gallery pages 
+    gallery_file_paths.each do |file|
+        puts "File: #{file}"
+        file_contents = YAML.load(File.open(file))
+        #puts file_contents
+        
+        title = file_contents['title']
+        title_slug = title.gsub(' ','').gsub('&amp;', '&').downcase 
+        
+        file_contents['layout'] = 'gallery'
+        file_contents['permalink'] = "/gallery/#{title_slug}"
+        file_contents['lightbox'] = "#{title}"
+        file_contents['basedir'] = file.gsub("#{full_img_dir}/",'').gsub('/gallery.yaml','')
+        
+        all_galleries.push(file_contents)
+        
+        # Write the file for the single gallery page. 
+        File.open("gallery/#{title_slug}.html", 'w+') do |new_file|
+            YAML.dump(file_contents, new_file)
+            # SimpleYAML is missing this, jekyll will complain without it.
+            new_file.write('---')
+        end
+        
+        #Generate smaller versions
+        FileUtils.mkdir_p("photos/large/#{file_contents['basedir']}")
+        FileUtils.mkdir_p("photos/thumbs/#{file_contents['basedir']}")
+        
+        file_contents['images'].each do |image_file|
+        
+            image_path = "#{full_img_dir}/#{file_contents['basedir']}/#{image_file['file']}"
+        
+            # thumbnail. This will use a section of the centre of the image
+            i = Magick::Image.read(image_path).first
+            i.resize_to_fill(250,250, Magick::CenterGravity).write("photos/thumbs/#{file_contents['basedir']}/#{image_file['file']}")
+            
+            # large. This will use the full image
+            i = Magick::Image.read(image_path).first
+            i.resize_to_fit(1024, 1024).write("photos/large/#{file_contents['basedir']}/#{image_file['file']}")
+        end
+        
+        
+    end
+    
+    #Regenerate the index page
+    index_contents = Hash.new
+    index_contents['layout'] = 'photosets'
+    index_contents['sets'] = []
+    
+    all_galleries.sort_by{|e| e['order']}
+    all_galleries.each do |item|
+        
+        set_def = Hash.new
+        set_def['title'] = item['title']
+        set_def['url'] = item['permalink']
+        
+        item['images'].each do |image|
+            if image['main']
+                basedir = item['basedir']
+                img_file = image['file']
+                set_def['pictureUrl'] = "#{basedir}/#{img_file}"
+            end
+        end
+        
+        index_contents['sets'].push(set_def) 
+    end
+
+    #Write the file     
+    File.open("index.html", 'w+') do |new_file|
+        YAML.dump(index_contents, new_file)
+        # SimpleYAML is missing this, jekyll will complain without it.
+        new_file.write('---')
+    end
+    
 end
 
 desc 'Generate Thumbnails'
@@ -199,7 +312,7 @@ end
 
 def upload
     puts 'Sending to server...'
-    sh 'rsync -avz --delete _site/ david@dev-lamp.local:/home/wwwroot/lauraphoto/'
+    sh 'rsync -avz --delete ../lmk_built_site/  david@dev-lamp.local:/home/wwwroot/lauraphoto/'
     puts 'Sent'
 
 end

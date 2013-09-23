@@ -247,11 +247,6 @@ body {
   width: auto;
   height: auto;
 }
-.sets .photoHolder .image-cropper .centered {
-  position: absolute;
-  left: -25%;
-  top: -25%;
-}
 .sets .photoHolder .hover_block {
   width: 250px;
   position: relative;
@@ -529,11 +524,6 @@ body {
     width: auto;
     height: auto;
   }
-  .sets .photoHolder .image-cropper .centered {
-    position: absolute;
-    left: -25%;
-    top: -25%;
-  }
   .sets .photoHolder .hover_block {
     width: 150px;
     position: relative;
@@ -659,11 +649,6 @@ body {
     width: auto;
     height: auto;
   }
-  .sets .photoHolder .image-cropper .centered {
-    position: absolute;
-    left: -25%;
-    top: -25%;
-  }
   .sets .photoHolder .hover_block {
     width: 250px;
     position: relative;
@@ -788,11 +773,6 @@ body {
     max-width: 500px;
     width: auto;
     height: auto;
-  }
-  .sets .photoHolder .image-cropper .centered {
-    position: absolute;
-    left: -25%;
-    top: -25%;
   }
   .sets .photoHolder .hover_block {
     width: 250px;

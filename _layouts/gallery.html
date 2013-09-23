@@ -18,7 +18,7 @@ headIncludes:
 {% for image in page.images %}
     <div class="photoHolder title" title="{{ image.caption }}">
         <div class="image-cropper">
-            <a href="{{ site.largePath }}/{{ image.url }}" data-lightbox="{{ page.lightbox }}" title="{{ image.caption }}"><img src="{{ site.thumbPath }}/{{ image.url }}" class="centered" alt="{{ image.caption }}" title="{{ image.caption }}" /></a>
+            <a href="{{ site.largePath }}/{{ page.basedir }}/{{ image.file }}" data-lightbox="{{ page.lightbox }}" title="{{ image.caption }}"><img src="{{ site.thumbPath }}/{{ page.basedir }}/{{ image.file }}" class="centered" alt="{{ image.caption }}" title="{{ image.caption }}" /></a>
         </div>
     </div>
 {% endfor %}

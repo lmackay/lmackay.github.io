@@ -13,8 +13,3 @@ images:
   file: Poppy.jpg
 - caption: Wasp
   file: wasp.jpg
-layout: gallery
-permalink: /gallery/flowers
-lightbox: Flowers
-basedir: flowers
----

@@ -5,8 +5,3 @@ images:
 - caption: Ian in Black and White
   file: Ian_in_Black_and_White_named.jpg
   main: true
-layout: gallery
-permalink: /gallery/people
-lightbox: People
-basedir: people
----
