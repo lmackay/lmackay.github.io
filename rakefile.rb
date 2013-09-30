@@ -124,7 +124,7 @@ def generateGallery(sourcePath, galleryRootDir, destPath)
         
   # Write the file for the single gallery page. 
   titleSlug = encodeSlug(fileContents['title'])
-  writeYAML(fileContents, "#{galleryRootDir}/#{titleSlug}.html")
+  writeYAML(fileContents, "#{destPath}/#{titleSlug}.html")
         
   #Generate smaller versions of images
   FileUtils.mkdir_p("photos/large/#{fileContents['basedir']}")
