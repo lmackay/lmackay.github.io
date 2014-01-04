@@ -1,0 +1,130 @@
+/**
+ * File containing base styles that are helpful for any site.
+ */
+ 
+  // Media query values ************************/
+  //Reference: http://stephen.io/mediaqueries/
+ @mq-iPhone5: ~"only screen and (min-device-width : 320px) and (max-device-width : 568px) ";
+ @mq-iPhone5Landscape: ~"@{mq-iPhone5} and (orientation : landscape) ";
+ @mq-iPhone5Portrait: ~"@{mq-iPhone5} and (orientation : portrait) ";
+ 
+ @mq-iPhone234: ~"only screen and (min-device-width : 320px) and (max-device-width : 480px) ";
+ @mq-iPhone234Landscape: ~"@{mq-iPhone234} and (orientation : landscape) ";
+ @mq-iPhone234Portrait: ~"@{mq-iPhone234} and (orientation : portrait) ";
+ 
+ @mq-iPhone: ~"@{mq-iPhone5}, @{mq-iPhone234}";
+ @mq-iPhoneSized: ~"only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
+ 
+ @mq-iPad: ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
+ @mq-iPadSized: ~"only screen (max-width : 1024px) ";
+ 
+ @mq-iPadLandscape: ~"@{mq-iPad} and (orientation : landscape) ";
+ @mq-iPadPortrait: ~"@{mq-iPad} and (orientation : portrait) ";
+ //Retina add rule and (-webkit-min-device-pixel-ratio: 2)
+ //Non-Retina add rule and (-webkit-min-device-pixel-ratio: 1)
+ 
+ // Fonts ********************************/
+@import url(http://fonts.googleapis.com/css?family=Tangerine:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+  
+@titleFonts: 'Tangerine', cursive, sans-serif;
+@headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@headerFontWeight: 700;
+@contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@contentFontWeight: 400;
+
+@fontSizeStandard: 18px;
+@fontSizeSmaller: 16px;
+@fontSizeSmallest: 12px;
+
+ // Colours ****************************/
+@backgroundColour: #F9F9F9;
+@colour1: #010A26;
+@colour2: #021F59;
+@colour3: #0762D9;
+@colour4: #0785F2;
+@colour5: #8C1C1C;
+
+@textColour: @colour1;
+@hoverColour: @colour3;
+ 
+ // Styles ************************/
+.clear {
+    clear: both;
+}
+.hidden {
+ 	display: none;
+}
+.text-left { 
+ 	text-align: left; 
+}
+.text-right { 
+ 	text-align: right; 
+}
+.text-center { 
+ 	text-align: center; 
+}
+ 
+// Mixins***************************/
+  
+.columnCount(@count) {
+    /* Firefox */
+    -moz-column-count: @count; 
+    /* Safari and Chrome */
+    -webkit-column-count: @count; 
+    /* "Standard" */
+    column-count: @count;
+}
+ 
+.columnGap(@gap) {
+    /* Firefox */
+    -moz-column-gap: @gap; 
+    /* Safari and Chrome */
+    -webkit-column-gap: @gap; 
+    /* "Standard" */
+    column-gap: @gap;
+}
+ 
+.columnFill(@fill) {
+    -webkit-column-fill: @fill;
+    -moz-column-fill: @fill;
+    column-fill: @fill;
+ }
+ 
+.transition(...) {
+    transition: @arguments;
+    -moz-transition: @arguments;
+    -webkit-transition: @arguments;
+    -o-transition: @arguments;
+}
+
+
+.baseFontSize() {
+    font-size: @fontSizeStandard;
+    
+    @media @mq-iPadPortrait, @mq-iPadSized {
+        font-size: @fontSizeSmaller;
+    }
+    
+    @media @mq-iPhone, @mq-iPhoneSized {
+        font-size: @fontSizeSmallest;
+    }
+}
+
+// REM based sizing. Based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ 
+.font-size(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
+    font-size: ~"@{pxValue}px"; 
+    
+    @media @mq-iPadPortrait, @mq-iPadSized {
+        @pxValue: round((@sizeValue * unit(@fontSizeSmaller)));
+        font-size: ~"@{pxValue}px"; 
+    }
+    @media @mq-iPhone, @mq-iPhoneSized {
+        @pxValue: round((@sizeValue * unit(@fontSizeSmallest)));
+        font-size: ~"@{pxValue}px"; 
+    }
+    
+    font-size: ~"@{remValue}rem";
+}

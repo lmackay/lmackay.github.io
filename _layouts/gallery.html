@@ -1,25 +1,23 @@
 ---
-layout: main
-headIncludes: 
-- <!-- Lightbox -->
-- <script src="/js/jquery-1.10.2.min.js"></script>
-- <script src="/js/lightbox-2.6.min.js"></script>
-- <link href="/css/lightbox.css" rel="stylesheet" />
+layout: default
+includeJQuery: true
+includeFoundation: true
+includeLightbox: true
 ---
-<ul class="breadcrumb">
-	<li><a href="{{ site.photosetHome }}">Photosets</a></li>
-	<li><a href="#">{{ page.title }}</a></li>
+<ul class="breadcrumbs">
+  <li><a href="/gallery">Gallery</a></li>
+  <li class="current">{{ page.title }}</li>
 </ul>
 
 {% if page.date %}<p class="meta">{{ page.date | date_to_string }}</p>{% endif %}
 
 <div class="sets">
 {{ content }}
+<ul class="clearing-thumbs" data-clearing>
 {% for image in page.images %}
-    <div class="photoHolder title" title="{{ image.caption }}">
-        <div class="image-cropper">
-            <a href="{{ site.largePath }}/{{ page.basedir }}/{{ image.file }}" data-lightbox="{{ page.lightbox }}" title="{{ image.caption }}"><img src="{{ site.thumbPath }}/{{ page.basedir }}/{{ image.file }}" class="centered" alt="{{ image.caption }}" title="{{ image.caption }}" /></a>
-        </div>
-    </div>
+    <li>
+        <a class="th" href="{{ image.large }}"><img data-caption="{{ image.caption }}" src="{{ image.thumb }}"></a>
+    </li>
 {% endfor %}
+</ul>
 </div>

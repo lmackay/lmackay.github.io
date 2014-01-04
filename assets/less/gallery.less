@@ -1,0 +1,56 @@
+@import (reference) "base.less";
+/**
+ * Styles for image gallery
+ */
+ 
+ 
+ .clearing-thumbs {
+     li {
+         margin-bottom: 10px;
+     }
+ } 
+ 
+ .orbit-container {
+    .orbit-caption {
+        @media @mq-iPhone, @mq-iPhoneSized {
+            display: none;    
+        }
+    }
+ }
+ 
+ .container {
+     .portfolio {
+     	background: none;
+     	overflow: visible;
+     	box-shadow: none;
+     	-moz-box-shadow: none;
+     	-webkit-box-shadow: none;
+         
+         .information {
+         	padding: 12px 12px 0px 12px;
+         	overflow: hidden;
+     	}
+         
+        .information {
+         	padding-top: 24px;
+     	}
+     	
+        .postarea.portfolio {
+         	display: block;
+         	background: @backgroundColour;
+         	margin: 0px auto 20px;
+         	padding: 40px;
+         	min-height: 400px;
+     	    
+     	    .featureimg {
+     	        width: 100%;
+     	        display: block;
+     	    
+             	line-height: 0;
+             	text-align: center;
+             	margin: 0px auto 0px;
+             	overflow: hidden;
+         	}
+         }
+     }
+ }

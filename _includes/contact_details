@@ -1,0 +1,19 @@
+<section class="panel radius contact">
+  <ul class="inline-list">
+      <li>
+          <a href="https://www.facebook.com/{{ site.data.author.facebook }}">
+              <i class="foundicon-social-facebook"></i>{{ site.data.author.facebook }}
+          </a>
+      </li>
+      <li>
+          <a href="mailto:{{ site.data.author.email }}">
+              <i class="foundicon-gen-mail"></i>{{ site.data.author.email }}
+          </a>
+      </li>
+      <li>
+          <a href="tel:{{ site.data.author.phone }}">
+              <i class="foundicon-gen-phone"></i>{{ site.data.author.phone }}
+          </a>
+      </li>
+  </ul>
+</section>

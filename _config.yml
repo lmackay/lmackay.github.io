@@ -2,13 +2,10 @@ name: Laura Mackay Photography
 description: Photography by Laura Mackay
 url: http://www.LauraMackayPhotography.com
 
-who: Laura Mackay
-jobtitle: Student Photographer
-email: Laura@LauraMackayPhotography.com
-
 photosetHome: /
 thumbPath: /photos/thumbs
 largePath: /photos/large
+exclude: [photos/full]
 
 pygments: true
 markdown: rdiscount

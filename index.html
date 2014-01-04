@@ -1,13 +1,13 @@
 ---
-layout: photosets
-sets:
-- title: Flowers
-  url: /gallery/flowers
-  pictureUrl: flowers/Blue_Poppy.jpg
-- title: Harris and Tiree
-  url: /gallery/harrisandtiree
-  pictureUrl: harris/Harris_and_Tiree_2013_598_Named_2.jpg
-- title: People
-  url: /gallery/people
-  pictureUrl: people/Ian_in_Black_and_White_named.jpg
+layout: default
+includeJQuery: true
+includeFoundation: true
+includeOrbit: true
 ---
+<ul class="featured" data-orbit>
+{% for order in (1..site.pages.size) %}{% for node in site.pages %}{% if node.layout == 'gallery' and node.order == order %}{% for image in node.images %}{% if image.slideshow %}    <li>
+    <img src="{{ image.large }}" alt="{{ image.caption }}" />
+{% if image.caption %}    <div class="orbit-caption">{{ image.caption }}</div>{% endif %}
+  </li>
+{% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}
+</ul>

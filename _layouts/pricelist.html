@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="pricelist text-center">
+    <div class="row collapse">
+        {% for package in page.packages %}
+        <div class="small-12 medium-6 large-3 columns">
+          <ul class="pricing-table">
+            {% if package.title %}<li class="title">{{ package.title }}</li>{% endif %}
+            {% if package.price %}<li class="price">{{ package.price }}</li>{% endif %}
+            {% if package.description %}<li class="description">{{ package.description }}</li>{% endif%}
+            {% for item in package.contents %}
+            <li class="bullet-item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+    </div>
+    
+    {{ content }} 
+
+
+    
+</section>

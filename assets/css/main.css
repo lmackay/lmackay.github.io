@@ -1,0 +1,550 @@
+@import url(http://fonts.googleapis.com/css?family=Tangerine:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+/* Main stylesheet */
+/**
+ * File containing base styles that are helpful for any site.
+ */
+.clear {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+/**
+ * Styles for image gallery
+ */
+.clearing-thumbs li {
+  margin-bottom: 10px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .orbit-container .orbit-caption {
+    display: none;
+  }
+}
+.container .portfolio {
+  background: none;
+  overflow: visible;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.container .portfolio .information {
+  padding: 12px 12px 0px 12px;
+  overflow: hidden;
+}
+.container .portfolio .information {
+  padding-top: 24px;
+}
+.container .portfolio .postarea.portfolio {
+  display: block;
+  background: #f9f9f9;
+  margin: 0px auto 20px;
+  padding: 40px;
+  min-height: 400px;
+}
+.container .portfolio .postarea.portfolio .featureimg {
+  width: 100%;
+  display: block;
+  line-height: 0;
+  text-align: center;
+  margin: 0px auto 0px;
+  overflow: hidden;
+}
+.pricelist p:nth-of-type(1) {
+  padding-top: 3em;
+}
+.pricelist ul.pricing-table {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.pricelist ul.pricing-table .title {
+  background: #010a26;
+}
+.pricelist .recommended {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+}
+@media only screen and (min-width: 768px) {
+  .pricelist .left-side {
+    border-right: none;
+  }
+  .pricelist .right-side {
+    border-left: none;
+  }
+}
+body {
+  background: #f9f9f9;
+  color: #010a26;
+  font-size: 18px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 2.2;
+  margin: 0px auto 0px;
+  padding: 0px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  body {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  body {
+    font-size: 12px;
+  }
+}
+.container {
+  box-shadow: 0px 0px 2px #CCCCCC;
+  -moz-box-shadow: 0px 0px 2px #CCCCCC;
+  -webkit-box-shadow: 0px 0px 2px #CCCCCC;
+}
+/***********************
+ * Links ***************
+ ***********************/
+a img {
+  border: none;
+}
+a {
+  color: #010a26 !important;
+  text-decoration: underline;
+  transition: background 0.25s color 0.25s;
+  -moz-transition: background 0.25s color 0.25s;
+  -webkit-transition: background 0.25s color 0.25s;
+  -o-transition: background 0.25s color 0.25s;
+}
+a:focus,
+a:hover,
+a:active {
+  color: #0762d9 !important;
+  text-decoration: underline;
+  outline: none;
+}
+/***********************
+ * Global **************
+ ***********************/
+p {
+  padding: 8px 0px 8px 0px;
+  margin: 0px 0px 0px 0px;
+}
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}
+hr {
+  border: 0;
+  width: 100%;
+  height: 1px;
+  color: #DDDDDD;
+  background-color: #DDDDDD;
+  margin: 6px 0px 8px 0px;
+  padding: 0px;
+}
+img,
+iframe,
+object,
+embed {
+  max-width: 100%;
+}
+img,
+object,
+embed {
+  height: auto;
+  margin: 0px auto 0px;
+}
+/***********************
+ * Layout **************
+ ***********************/
+body {
+  padding: 0px 20px;
+}
+.container {
+  background: #f9f9f9;
+  max-width: 980px;
+  margin: 0px auto 0px;
+}
+/***********************
+* Headings	************
+************************/
+h1,
+h2,
+h3 {
+  color: #021f59;
+  font-weight: 700;
+  font-style: normal;
+  margin: 4px 0px 4px 0px;
+  padding: 4px 0px 4px 0px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h4,
+h5,
+h6 {
+  color: #010a26;
+  font-weight: 400;
+  margin: 4px 0px 4px 0px;
+  padding: 4px 0px 4px 0px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.6;
+}
+h1 {
+  font-size: 40px;
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  h1 {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  h1 {
+    font-size: 26px;
+  }
+}
+h2 {
+  font-size: 36px;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  h2 {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+h3 {
+  font-size: 32px;
+  font-size: 1.8rem;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  h3 {
+    font-size: 29px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  h3 {
+    font-size: 22px;
+  }
+}
+h4 {
+  font-size: 25px;
+  font-size: 1.4rem;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  h4 {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  h4 {
+    font-size: 17px;
+  }
+}
+h5 {
+  font-size: 22px;
+  font-size: 1.2rem;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  h5 {
+    font-size: 19px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  h5 {
+    font-size: 14px;
+  }
+}
+h6 {
+  font-size: 20px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #DDDDDD;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  h6 {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  h6 {
+    font-size: 13px;
+  }
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #010a26;
+  text-decoration: none;
+  border: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #0762d9;
+  text-decoration: none;
+  border: none;
+}
+.headline {
+  font-size: 54px;
+  font-size: 3rem;
+  line-height: 1.4;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  .headline {
+    font-size: 48px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .headline {
+    font-size: 36px;
+  }
+}
+.headline-small {
+  font-size: 36px;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  .headline-small {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .headline-small {
+    font-size: 24px;
+  }
+}
+/***********************
+* Header	************
+************************/
+#site-header {
+  margin: 0px;
+  padding: 0.5em 0 0.5em 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+#site-header .site-title {
+  display: block;
+  font-family: 'Tangerine', cursive, sans-serif;
+  font-size: 90px;
+  font-size: 5rem;
+  line-height: 1.2;
+  padding: 0px;
+  margin: 0px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  #site-header .site-title {
+    font-size: 80px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  #site-header .site-title {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  #site-header .site-title {
+    font-size: 54px;
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px)  and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px)  and only screen (max-width : 1024px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) and only screen (max-width : 1024px)  {
+  #site-header .site-title {
+    font-size: 48px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px)  and only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) and only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px)  and only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) and only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  #site-header .site-title {
+    font-size: 36px;
+  }
+}
+#site-header .site-description {
+  display: block;
+  color: #666666;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.8;
+  overflow: hidden;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  #site-header .site-description {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  #site-header .site-description {
+    font-size: 13px;
+  }
+}
+/***********************
+ * Navigation **********
+ ***********************/
+.main-nav {
+  display: block;
+  background: none;
+  font-size: 16px;
+  font-size: 0.9rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0px auto 0px;
+  padding: 0px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  .main-nav {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .main-nav {
+    font-size: 11px;
+  }
+}
+.menu,
+.menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu {
+  margin-bottom: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu a {
+  color: lighter(#010a26);
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.2;
+  margin: 0px;
+  padding: 0px 12px;
+  border-left: 1px solid #CCCCCC;
+  display: inline-block;
+  position: relative;
+}
+.menu a:focus,
+.menu a:hover,
+.menu a:active {
+  color: #0762d9;
+  outline: 0;
+}
+.menu ul {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+}
+.menu li {
+  display: inline-block;
+  position: relative;
+  line-height: 60px;
+  margin: 0px;
+}
+.menu li:first-child a {
+  border-left: none;
+}
+.menu li:hover {
+  outline: 0;
+}
+/***********************
+ * Footer **************
+ ***********************/
+.footer {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  font-size: 0.8rem;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  .footer {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .footer {
+    font-size: 10px;
+  }
+}
+.footer .row {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.footer .contact {
+  text-align: center;
+  padding: 0 1.25rem 0 1.25rem;
+}
+.footer .contact ul {
+  display: inline-block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer .contact ul li {
+  display: inline-block;
+}
+.footer .contact ul li:nth-of-type(1) {
+  margin-left: 0;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px)  and (orientation : portrait) , only screen and (min-device-width : 320px) and (max-device-width : 480px)  and (orientation : portrait) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .footer .contact ul li {
+    margin-left: 0;
+  }
+}
+.footer .contact ul li i::after {
+  content: ' ';
+}
+.footer .copy-details {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: 0px;
+  padding: 12px 0px 24px 0px;
+}
+.footer .copy-details p {
+  font-size: 11px;
+  font-size: 0.6rem;
+  color: #999999;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen (max-width : 1024px)  {
+  .footer .copy-details p {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) , only screen and (min-device-width : 320px) and (max-device-width : 480px) , only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .footer .copy-details p {
+    font-size: 7px;
+  }
+}

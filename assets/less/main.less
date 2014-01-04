@@ -1,0 +1,321 @@
+/* Main stylesheet */
+@import "base.less";
+@import "gallery.less";
+@import "prices.less";
+
+body {
+	background: @backgroundColour;
+	color: @textColour;
+	.baseFontSize();
+	font-family: @contentFonts;
+	font-weight: @contentFontWeight;
+	line-height: 2.2;
+	margin: 0px auto 0px;
+	padding: 0px;
+}
+
+
+.container {
+    box-shadow: 0px 0px 2px #CCCCCC;
+    -moz-box-shadow: 0px 0px 2px #CCCCCC;
+    -webkit-box-shadow: 0px 0px 2px #CCCCCC;
+}
+
+/***********************
+ * Links ***************
+ ***********************/
+
+a img {
+	border: none;
+}
+a {
+	color: @textColour !important;
+	text-decoration: underline;
+	.transition(background .25s, color .25s);
+}
+a:focus, a:hover, a:active {
+	color: @hoverColour !important;
+	text-decoration: underline;
+	outline: none;
+}
+
+/***********************
+ * Global **************
+ ***********************/
+
+p {
+	padding: 8px 0px 8px 0px;
+	margin: 0px 0px 0px 0px;
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}	
+hr {
+	border: 0;
+	width: 100%;
+	height: 1px;
+	color: #DDDDDD;
+	background-color: #DDDDDD;
+	margin: 6px 0px 8px 0px;
+	padding: 0px;
+}
+img, iframe, object, embed {
+	max-width: 100%;
+}
+img, object, embed {
+	height: auto;
+	margin: 0px auto 0px;
+}
+
+/***********************
+ * Layout **************
+ ***********************/
+ body { 
+  	padding: 0px 20px;
+ }
+ .container { 
+ 	background: @backgroundColour;
+ 	max-width: 980px;
+ 	margin: 0px auto 0px;
+ }
+
+
+/***********************
+* Headings	************
+************************/
+
+h1, h2, h3 {
+	color: @colour2;
+	font-weight: @headerFontWeight;
+	font-style: normal;
+	margin: 4px 0px 4px 0px;
+	padding: 4px 0px 4px 0px;
+	
+	font-family: @headerFonts;
+}
+
+h4, h5, h6 {
+	color: @textColour;
+    font-weight: @contentFontWeight;
+    margin: 4px 0px 4px 0px;
+    padding: 4px 0px 4px 0px;
+    
+	font-family: @contentFonts;
+}
+
+h3, h4, h5, h6 {
+    line-height: 1.6;
+}
+
+h1 {
+	.font-size(2.2);
+	line-height: 1.4;
+}
+h2 {
+	.font-size(2);
+	line-height: 1.4;
+}
+h3 {
+	.font-size(1.8);
+}
+h4 {
+	.font-size(1.4);
+}
+h5 {
+	.font-size(1.2)
+}
+h6 {
+	.font-size(1.1);
+	border-bottom: 1px solid #DDDDDD;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    a {
+	    color: @textColour;
+    	text-decoration: none;
+	    border: none;
+    
+        &:hover {
+    	    color: @hoverColour;
+        	text-decoration: none;
+    	    border: none;
+        }
+    }
+}
+
+.headline {
+	.font-size(3);
+	line-height: 1.4;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+.headline-small {
+	.font-size(2);
+	line-height: 1.4;
+}
+	
+/***********************
+* Header	************
+************************/
+
+#site-header {
+	margin: 0px;
+	padding: 0.5em 0 0.5em 0;
+	display: block;
+	width: 100%;
+	text-align: center;
+    
+    .site-title {
+    	display: block;
+    	font-family: @titleFonts;
+    	.font-size(5); 
+    	
+    	@media @mq-iPhone, @mq-iPhoneSized {
+    	    .font-size(3);    
+    	}
+    	
+    	line-height: 1.2;
+    	padding: 0px;
+    	margin: 0px;
+	}
+    .site-description {
+    	display: block;
+    	color: #666666;
+    	font-family: @contentFonts;
+    	.font-size(1.1);
+    	font-weight: @contentFontWeight;
+    	text-transform: none;
+    	line-height: 1.8;
+    	overflow: hidden;
+	}
+}
+	
+/***********************
+ * Navigation **********
+ ***********************/
+
+.main-nav {
+	display: block;
+	background: none;
+	.font-size(0.9);
+	font-family: @contentFonts;
+	font-style: normal;
+	font-weight: @contentFontWeight;
+	margin: 0px auto 0px;
+	padding: 0px;
+}
+	
+.menu, .menu * {
+	margin:	0;
+	padding: 0;
+	list-style:	none;
+}
+
+.menu {
+	margin-bottom: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+	
+	a {
+	    color: lighter(@textColour);
+    	text-align: center;
+    	text-decoration: none;
+    	line-height: 1.2;
+    	margin: 0px;
+    	padding: 0px 12px;
+    	border-left: 1px solid #CCCCCC;
+    	
+    	display: inline-block;
+    	position: relative;
+	    &:focus, &:hover, &:active {
+        	color: @hoverColour;
+        	outline: 0;
+    	}
+    }
+	
+	ul {
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+	}
+	
+    li {
+        display: inline-block;
+        position: relative;
+    
+	    line-height: 60px;
+    	margin: 0px;
+    	
+    	&:first-child a {
+    		border-left: none;
+    	}
+	    
+	    &:hover {
+        	outline: 0;
+    	}
+    }
+}		
+
+/***********************
+ * Footer **************
+ ***********************/
+
+.footer {
+	margin: 0px;
+	padding: 0px;
+	.font-size(0.8);
+	
+	.row {
+	    padding-left: 2em;
+	    padding-right: 2em;
+	    
+	}
+	
+	.contact {
+        text-align: center;
+        padding: 0 1.25rem 0 1.25rem;
+        
+	    ul {
+	        display: inline-block;
+	        text-align: center;
+	        margin-left: auto;
+	        margin-right: auto;
+	        
+	        li {
+	            display: inline-block;
+	            
+	            &:nth-of-type(1) {
+	                margin-left: 0;
+	            }
+	            
+	            @media @mq-iPhone5Portrait, @mq-iPhone234Portrait, @mq-iPhoneSized {
+	                margin-left: 0;
+	            }
+	            
+	            i::after {
+	                content: ' ';
+	            }
+	        }
+	    }
+	}
+
+    .copy-details {
+    	font-family: @contentFonts;
+    	text-align: center;
+    	margin: 0px;
+    	padding: 12px 0px 24px 0px;
+    	
+    	p {
+        	.font-size(0.6);
+        	color: #999999;
+        	font-weight: normal;
+        	line-height: 20px;
+        	margin: 0px 0px 0px 0px;
+        	padding: 0px 0px 0px 0px;
+    	}
+    }
+}
