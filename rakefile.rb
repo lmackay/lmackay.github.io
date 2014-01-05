@@ -217,7 +217,7 @@ def produceGalleryYaml(sourceFile, galleryRootDir)
   titleSlug = encodeSlug(title)
   
   fileContents['layout'] = 'gallery'
-  fileContents['permalink'] = "/gallery/#{titleSlug}"
+  fileContents['permalink'] = "/gallery/#{titleSlug}/"
   fileContents['lightbox'] = "#{title}"
   fileContents['basedir'] = sourceFile.gsub("#{galleryRootDir}/",'').gsub('/gallery.yaml','')
         

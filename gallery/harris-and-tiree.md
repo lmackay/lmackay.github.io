@@ -27,6 +27,6 @@ images:
   large: /photos/large/harris/Harris_and_Tiree_2013_982_Named_5.jpg
   thumb: /photos/thumbs/harris/Harris_and_Tiree_2013_982_Named_5.jpg
 layout: gallery
-permalink: /gallery/harris-and-tiree
+permalink: /gallery/harris-and-tiree/
 lightbox: Harris and Tiree
 ---

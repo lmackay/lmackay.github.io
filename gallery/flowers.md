@@ -25,6 +25,6 @@ images:
   large: /photos/large/flowers/wasp.jpg
   thumb: /photos/thumbs/flowers/wasp.jpg
 layout: gallery
-permalink: /gallery/flowers
+permalink: /gallery/flowers/
 lightbox: Flowers
 ---

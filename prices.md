@@ -1,7 +1,7 @@
 ---
 layout: pricelist
 title: Prices
-permalink: /prices
+permalink: /prices/
 packages:
 - title: Package 1
   price: £60
