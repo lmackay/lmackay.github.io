@@ -14,3 +14,7 @@ gh-pages/
 site/_site/
 coverage
 .ruby-version
+
+*.sublime-project
+
+*.sublime-workspace
