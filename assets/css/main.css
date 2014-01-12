@@ -106,6 +106,7 @@ body {
   box-shadow: 0px 0px 2px #CCCCCC;
   -moz-box-shadow: 0px 0px 2px #CCCCCC;
   -webkit-box-shadow: 0px 0px 2px #CCCCCC;
+  min-height: 6rem;
 }
 /***********************
  * Links ***************
@@ -475,6 +476,9 @@ h6 a:hover {
 }
 .menu li:hover {
   outline: 0;
+}
+.four-oh-four h1 {
+  font-family: 'Tangerine', cursive, sans-serif;
 }
 /***********************
  * Footer **************
