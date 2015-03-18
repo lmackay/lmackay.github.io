@@ -1,0 +1,24 @@
+---
+layout: default
+permalink: /gallery/
+---
+<section class="portfolio">
+			
+	<div class="row">
+	      
+{% for order in (1..site.gallery.size) %}{% for node in site.gallery %}{% if node.order == order %}{% for image in node.images %}{% if image.main %}			                        
+        <div class="small-12 medium-6 large-4 columns">
+        
+	        <div class="postarea portfolio">
+	
+	            <a class="featureimg" href="{{ node.url }}" rel="bookmark" title="{{ node.title }}"><img src="{{ image.thumb }}" alt="{{ image.caption }}" /></a>
+	                	            	            
+	            	            <div class="information">              
+	                <h2 class="headline-small text-center"><a href="{{ node.url }}" rel="bookmark" title="{{ node.title }}">{{ node.title }}</a></h2>
+	                {% if node.description %}<p>{{ node.description }} <!--TODO: READ MORE --></p> {% endif %}
+	            </div>
+	        </div>
+        
+        </div>{% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}
+    </div>
+</section>

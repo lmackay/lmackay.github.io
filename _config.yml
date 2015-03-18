@@ -7,9 +7,16 @@ thumbPath: /photos/thumbs
 largePath: /photos/large
 exclude: [photos/full]
 
-pygments: true
+highlighter: pygments
 markdown: rdiscount
 timezone: Europe/London
 permalink: /:year/:month/:day/:title/
 relative_permalinks: false
 paginate: 5
+
+collections:
+  gallery:
+    output: true
+    permalink: /gallery/:title/
+    layout: gallery
+    lightbox: :title

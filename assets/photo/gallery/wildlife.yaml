@@ -1,0 +1,12 @@
+---
+title: Wildlife
+order: 6
+basedir: wildlife
+images: 
+- file: W01.jpg
+  main: true
+- file: W02.jpg
+- file: W03.jpg
+- file: W04.jpg
+- file: W05.jpg
+- file: W06.jpg
