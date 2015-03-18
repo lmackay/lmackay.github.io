@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width">
 
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
-<!--<link rel="Shortcut Icon" href="http://organicthemes.com/demo/photographer/wp-content/themes/organic_photographer/images/favicon.ico" type="image/x-icon">-->
 
 <link rel="stylesheet" href="/assets/foundation-5.0.2-custom/css/normalize.css">
 <link rel="stylesheet" href="/assets/foundation-5.0.2-custom/css/foundation.min.css">
@@ -98,7 +97,7 @@
 
 	    <section class="copy-details">
 	    
-	        <p>Copyright &copy; 2013 &middot; All Rights Reserved &middot; {{ site.data.author.who }}</p>
+	        <p>Copyright &copy; 2013 - {{ site.time | date: "%Y" }} &middot; All Rights Reserved &middot; {{ site.data.author.who }}</p>
 	        
 	        <p>Site by <a href="http://www.devwithimagination.com" target="_blank">David Hutchison</a></p>
 	    </section>
@@ -108,11 +107,17 @@
 
 
 <!-- init any required scripts -->
-{% if page.includeJQuery %}<script src="/assets/foundation-5.0.2-custom/js/vendor/jquery.js"></script>{% endif %}
-{% if page.includeFoundation %}<script src="/assets/foundation-5.0.2-custom/js/foundation/foundation.js" type="text/javascript"></script>{% endif %}
-{% if page.includeOrbit %}<script src="/assets/foundation-5.0.2-custom/js/foundation/foundation.orbit.js" type="text/javascript"></script>{% endif %}
-{% if page.includeLightbox %}<script src="/assets/foundation-5.0.2-custom/js/foundation/foundation.clearing.js" type="text/javascript"></script>{% endif %}
-{% if page.includeFoundation %}<script>
+{% if page.collection %}
+ 	{% assign vars = layout %}
+{% else %}
+	{% assign vars = page %}
+{% endif %}
+
+{% if vars.includeJQuery %}<script src="/assets/foundation-5.0.2-custom/js/vendor/jquery.js"></script>{% endif %}
+{% if vars.includeFoundation %}<script src="/assets/foundation-5.0.2-custom/js/foundation/foundation.js" type="text/javascript"></script>{% endif %}
+{% if vars.includeOrbit %}<script src="/assets/foundation-5.0.2-custom/js/foundation/foundation.orbit.js" type="text/javascript"></script>{% endif %}
+{% if vars.includeLightbox %}<script src="/assets/foundation-5.0.2-custom/js/foundation/foundation.clearing.js" type="text/javascript"></script>{% endif %}
+{% if vars.includeFoundation %}<script>
   $(document).foundation();
 </script>{% endif %}
 </body>
