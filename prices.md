@@ -2,7 +2,7 @@
 layout: pricelist
 title: Prices
 permalink: /prices/
-packages:
+notpackages:
 - title: Package 1
   price: £60
   contents:
@@ -29,8 +29,4 @@ packages:
   - "-"
 ---
 
-All packages include a photo session of up to 2 hours. 
-
-The prices listed cannot be lowered but additional prints can be arranged at an additional cost. 
-
-If you have any questions please do not hesitate to ask. 
+If you have any questions regarding a quote please do not hesitate to ask. 
