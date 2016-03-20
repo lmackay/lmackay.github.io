@@ -14,6 +14,9 @@ permalink: /:year/:month/:day/:title/
 relative_permalinks: false
 paginate: 5
 
+gems:
+- jekyll-paginate
+
 collections:
   gallery:
     output: true
