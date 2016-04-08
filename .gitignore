@@ -18,3 +18,6 @@ coverage
 *.sublime-project
 
 *.sublime-workspace
+
+lmk_built_site/
+.vagrant/
