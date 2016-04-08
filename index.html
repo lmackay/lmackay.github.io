@@ -6,7 +6,7 @@ includeOrbit: true
 ---
 <ul class="featured" data-orbit>
 {% for order in (1..site.gallery.size) %}{% for node in site.gallery %}{% if node.order == order %}{% for image in node.images %}{% if image.slideshow %}    <li>
-    <img src="{{ image.large }}" alt="{{ image.caption }}" />
+    <img src="/photos/large/{{ node.basedir }}/{{ image.file }}" alt="{{ image.caption }}" />
 {% if image.caption %}    <div class="orbit-caption">{{ image.caption }}</div>{% endif %}
   </li>
 {% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}

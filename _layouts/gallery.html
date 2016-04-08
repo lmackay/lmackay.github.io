@@ -9,14 +9,14 @@ includeLightbox: true
   <li class="current">{{ page.title }}</li>
 </ul>
 
-{% if page.date %}<p class="meta">{{ page.date | date_to_string }}</p>{% endif %}
+{% if page.galleryDate %}<p class="meta">{{ page.galleryDate | date_to_string }}</p>{% endif %}
 
 <div class="sets">
 {{ content }}
 <ul class="clearing-thumbs" data-clearing>
 {% for image in page.images %}
     <li>
-        <a class="th" href="{{ image.large }}"><img data-caption="{{ image.caption }}" src="{{ image.thumb }}"></a>
+        <a class="th" href="/photos/large/{{ page.basedir }}/{{ image.file }}"><img data-caption="{{ image.caption }}" src="/photos/thumbs/{{ page.basedir }}/{{ image.file }}"></a>
     </li>
 {% endfor %}
 </ul>

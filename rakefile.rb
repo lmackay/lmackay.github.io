@@ -16,14 +16,14 @@ task :build, :opt do |t, args|
     end
 
     jekyll
-    upload
+    #upload
     puts 'Done.'
 end
 
 def jekyll
   puts 'Building...'
   sh 'lessc assets/less/main.less assets/css/main.css'
-  sh 'jekyll build --drafts -d ../lmk_built_site'  
+  sh 'jekyll build --drafts -d lmk_built_site'  
   puts 'Build Complete'
 end
 
@@ -40,8 +40,8 @@ task :generateGalleries, :path do |t, args|
   puts 'Generating Galleries'
   
   #define variables
-  galleryDir = "gallery"
-  fullImgDir = 'photos/full'
+  galleryDir = "_gallery"
+  fullImgDir = 'assets/photo/full'
     
     
   galleries = findGalleryFiles(fullImgDir)
@@ -103,11 +103,6 @@ task :generateGalleries, :path do |t, args|
     end
   end
   
-  if galleryBuilt
-    #rebuild the index
-    buildPhotosetsIndex(galleries, fullImgDir, 'index.html')
-  end
-  
   puts 'Done'
 end
 
@@ -123,7 +118,7 @@ def generateGallery(sourcePath, galleryRootDir, destPath)
         
   # Write the file for the single gallery page. 
   titleSlug = encodeSlug(fileContents['title'])
-  writeYAML(fileContents, "#{destPath}/#{titleSlug}.html")
+  writeYAML(fileContents, "#{destPath}/#{titleSlug}.md")
         
   #Generate smaller versions of images
   FileUtils.mkdir_p("photos/large/#{fileContents['basedir']}")
@@ -146,7 +141,7 @@ end
 
 def upload
     puts 'Sending to server...'
-    sh 'rsync -avz --delete ../lmk_built_site/  david@dev-lamp.local:/home/wwwroot/lauraphoto/'
+    sh 'rsync -avz --delete lmk_built_site/  david@dev-lamp.local:/home/wwwroot/lauraphoto/'
     puts 'Sent'
 
 end
@@ -171,44 +166,6 @@ def ask(message, valid_options)
   answer
 end
 
-desc 'Build the main page of photosets.
-      @param galleryFiles - Array of the gallery files to include.
-      @param galleryRootDir - The directory that the gallery base dir is relative to
-      @param filePath - the file to write to.'
-def buildPhotosetsIndex(galleryFiles, galleryRootDir, filePath)
-    
-  # Load the individual gallery pages 
-  allGalleries = []
-  galleryFiles.each do |file|
-    fileContents = produceGalleryYaml(file, galleryRootDir) 
-    allGalleries.push(fileContents)
-  end
-  
-  #Regenerate the index page
-  indexContents = Hash.new
-  indexContents['layout'] = 'photosets'
-  indexContents['sets'] = []
-  
-  allGalleries.sort_by{|e| e['order']}
-  allGalleries.each do |item|
-        
-    setDefinition = Hash.new
-    setDefinition['title'] = item['title']
-    setDefinition['url'] = item['permalink']
-        
-    item['images'].each do |image|
-      if image['main']
-        setDefinition['pictureUrl'] = "#{item['basedir']}/#{image['file']}"
-      end
-    end
-        
-    indexContents['sets'].push(setDefinition) 
-  end
-
-  #Write the file
-  writeYAML(indexContents, filePath)
-end
-
 desc 'Produce the YAML file contents for a gallery from the source file.'
 def produceGalleryYaml(sourceFile, galleryRootDir) 
   fileContents = YAML.load(File.open(sourceFile))
@@ -217,8 +174,8 @@ def produceGalleryYaml(sourceFile, galleryRootDir)
   titleSlug = encodeSlug(title)
   
   fileContents['layout'] = 'gallery'
-  fileContents['permalink'] = "/gallery/#{titleSlug}/"
-  fileContents['lightbox'] = "#{title}"
+  #fileContents['permalink'] = "/gallery/#{titleSlug}/"
+  #fileContents['lightbox'] = "#{title}"
   fileContents['basedir'] = sourceFile.gsub("#{galleryRootDir}/",'').gsub('/gallery.yaml','')
         
   return fileContents;
