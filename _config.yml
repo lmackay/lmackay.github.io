@@ -8,7 +8,6 @@ largePath: /photos/large
 exclude: [photos/full]
 
 highlighter: pygments
-markdown: rdiscount
 timezone: Europe/London
 permalink: /:year/:month/:day/:title/
 relative_permalinks: false
