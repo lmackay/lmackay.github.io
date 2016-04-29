@@ -1,6 +1,6 @@
 ---
 title: Portraits
-order: 5
+order: 6
 basedir: portraits
 images:
 - file: P01.jpg

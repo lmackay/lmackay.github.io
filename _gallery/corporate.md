@@ -1,6 +1,6 @@
 ---
 title: Corporate
-order: 1
+order: 2
 basedir: corporate
 images:
 - file: C01.jpg

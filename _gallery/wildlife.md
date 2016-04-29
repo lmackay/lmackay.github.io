@@ -1,6 +1,6 @@
 ---
 title: Wildlife
-order: 6
+order: 7
 basedir: wildlife
 images:
 - file: W01.jpg
